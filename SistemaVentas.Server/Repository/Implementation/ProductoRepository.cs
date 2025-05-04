@@ -14,7 +14,7 @@ namespace SistemaVentas.Server.Repository.Implementation
 
         public async Task<IQueryable<Producto>> Consultar(Expression<Func<Producto, bool>> filtro = null)
         {
-            IQueryable<Producto> queryEntidad = filtro != null ? _context.Productos : _context.Productos.Where(filtro);
+            IQueryable<Producto> queryEntidad = filtro == null ? _context.Productos : _context.Productos.Where(filtro);
             return queryEntidad;
         }
 

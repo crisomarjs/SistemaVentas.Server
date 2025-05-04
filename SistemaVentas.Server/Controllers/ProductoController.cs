@@ -32,7 +32,7 @@ namespace SistemaVentas.Server.Controllers
                 query = query.Include(p => p.IdCategoriaNavigation);
 
                 listaProductos = _mapper.Map<List<ProductoDTO>>(query.ToList());
-                if(listaProductos.Count() > 0)
+                if(listaProductos.Count > 0)
                 {
                     response = new ResponseDTO<List<ProductoDTO>>() { status= true, msg = "ok", value = listaProductos };
                 }
